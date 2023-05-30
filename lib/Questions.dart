@@ -3,7 +3,9 @@ import 'package:quizapp/Data/Questions.dart';
 import 'package:quizapp/Model/AnswerButton.dart';
 
 class QuestionsState extends StatefulWidget {
-  const QuestionsState({super.key});
+  const QuestionsState({super.key, required this.SelectedAnswer});
+
+  final void Function(String ans) SelectedAnswer;
 
   @override
   State<StatefulWidget> createState() {
@@ -12,9 +14,10 @@ class QuestionsState extends StatefulWidget {
 }
 
 class _QuestionsState extends State<QuestionsState> {
-  var currentQuestion = 1;
+  var currentQuestion = 0;
 
-  void increaseQuestion() {
+  void increaseQuestion(String ans) {
+    widget.SelectedAnswer(ans);
     setState(() {
       currentQuestion++;
     });
@@ -41,22 +44,13 @@ class _QuestionsState extends State<QuestionsState> {
               SizedBox(
                 height: 30,
               ),
-
               ...que.ShuffeledQuestion().map(
-                (e) => AnswerButton(answerText: e, onTap: increaseQuestion),
+                (e) => AnswerButton(
+                    answerText: e,
+                    onTap: () {
+                      return increaseQuestion(e);
+                    }),
               ),
-              // AnswerButton(
-              //   answerText: 'Answer1',
-              //   onTap: () {},
-              // ),
-              // AnswerButton(
-              //   answerText: 'Answer1',
-              //   onTap: () {},
-              // ),
-              // AnswerButton(
-              //   answerText: 'Answer1',
-              //   onTap: () {},
-              // ),
             ],
           ),
         ));

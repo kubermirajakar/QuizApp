@@ -22,7 +22,7 @@ class StartScreen extends StatelessWidget {
             height: 80,
           ),
           Text(
-            'Welcome to Quiz App',
+            'Welcome to Kuber Quiz App',
             style: TextStyle(
               color: Colors.white,
               fontSize: 20,
