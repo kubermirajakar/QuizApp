@@ -40,14 +40,23 @@ class ResultsScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-                'You have answerd $numCorrectOptons of $numOfTotalQues questions correctly'),
+              'You have answerd $numCorrectOptons of $numOfTotalQues questions correctly',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
             SizedBox(
               height: 20,
             ),
             QuestionSummary(summaryData),
-            TextButton(
+            SizedBox(
+              height: 20,
+            ),
+            TextButton.icon(
+              icon: const Icon(Icons.refresh),
               onPressed: endQuiz,
-              child: Text('End quiz'),
+              label: Text('End quiz'),
             )
           ],
         ),
