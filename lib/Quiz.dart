@@ -43,8 +43,10 @@ class _QuizState extends State<Quiz> {
   void endQuiz() {
     setState(() {
       // currentScreen = QuestionsState();
-      // answersSelected = [];
+      print(answersSelected);
+      answersSelected = [];
       currentScreen = 'start-screen';
+      print(answersSelected);
     });
   }
 

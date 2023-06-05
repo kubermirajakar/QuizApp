@@ -48,7 +48,7 @@ class _QuestionsState extends State<QuestionsState> {
                 (e) => AnswerButton(
                     answerText: e,
                     onTap: () {
-                      return increaseQuestion(e);
+                      increaseQuestion(e);
                     }),
               ),
             ],
