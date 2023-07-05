@@ -18,6 +18,7 @@ class _QuestionsState extends State<QuestionsState> {
 
   void increaseQuestion(String ans) {
     widget.SelectedAnswer(ans);
+
     setState(() {
       currentQuestion++;
     });
